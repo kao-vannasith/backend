@@ -28,8 +28,9 @@ export const login = async (req: express.Request, res: express.Response) => {
 
     await user.save();
 
-    res.cookie('TOKEN-AUTH', user.authentication.sessionToken, { domain: '192.168.100.76', path: '/' });
-
+    res.cookie('TOKEN-AUTH', user.authentication.sessionToken, { domain: '192.168.100.76', path: '/'});
+    console.log(user.authentication.sessionToken)
+    console.log(req.cookies['TOKEN-AUTH'])
     return res.status(200).json(user).end();
   } catch (error) {
     console.log(error);
