@@ -28,7 +28,7 @@ export const login = async (req: express.Request, res: express.Response) => {
 
     await user.save();
 
-    res.cookie('TOKEN-AUTH', user.authentication.sessionToken, { domain: 'localhost', path: '/' });
+    res.cookie('TOKEN-AUTH', user.authentication.sessionToken, { domain: '192.168.100.76', path: '/' });
 
     return res.status(200).json(user).end();
   } catch (error) {
