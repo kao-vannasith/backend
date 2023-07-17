@@ -11,7 +11,7 @@ import mongoose from 'mongoose';
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:8080',
+  origin: '*',
   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
   exposedHeaders: ['Set-Cookie', 'Date', 'ETag'],
   credentials: true,
